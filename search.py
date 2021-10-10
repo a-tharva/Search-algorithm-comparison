@@ -26,6 +26,15 @@ def timer(func):
 
 
 def linear_search(arr, search_element):
+    """linear search
+    
+        keywords:
+            arr -- array for searching
+            search element -- search element
+        
+        return:
+            selarch element result(index)
+        """
     
     search_at = 0
     search_result = False
@@ -41,6 +50,16 @@ def linear_search(arr, search_element):
     
 
 def jump_search(arr, n, x):
+    """jump search
+    
+        keywords:
+            arr -- array for searching
+            n -- length of array
+            x -- search element
+            
+        return:
+            selarch element result(index)
+        """
     
     step = math.sqrt(n)
     
@@ -64,6 +83,17 @@ def jump_search(arr, n, x):
 
 
 def binary_search(arr, l, r, x):
+    """Binary search
+    
+        keywords:
+            arr -- array for searching
+            l -- left
+            r -- right
+            x -- search element
+            
+        return:
+            selarch element result(index)
+        """
     
     if r >= l:
         
@@ -86,6 +116,17 @@ def binary_search(arr, l, r, x):
 
 
 def interpolation_search(arr, low, hi, x):
+    """interpolation search
+    
+        keywords:
+            arr -- array for searching
+            low -- lower limit
+            hi -- higher limit
+            x -- search element
+        
+        return:
+            selarch element result(index)
+        """
     
     if(low <= hi and x >= arr[low] and x<= arr[hi]):
         pos = low+((hi-low)//(arr[hi] - arr[low])*(x-arr[low]))
@@ -122,62 +163,25 @@ class search:
         
     @timer
     def linear(self):
-        """linear search
-    
-        keywords:
-            arr -- array for searching
-            search element -- search element
         
-        return:
-            time, selarch element result(index)
-        """
         return linear_search(self.arr, self.ele)
         
     @timer
     def jump(self):
-        """jump search
-    
-        keywords:
-            arr -- array for searching
-            n -- length of array
-            x -- search element
-            
-        return:
-            time, selarch element result(index)
-        """
+        
         length = len(self.arr)
         return jump_search(self.arr, length, self.ele)
         
     @timer
     def binary(self):
-        """Binary search
-    
-        keywords:
-            arr -- array for searching
-            l -- left
-            r -- right
-            x -- search element
-            
-        return:
-            time, selarch element result(index)
-        """
+        
         length = len(self.arr)
         return binary_search(self.arr, 0, length-1, self.ele)
         
         
     @timer
     def interpolation(self):
-        """interpolation search
-    
-        keywords:
-            arr -- array for searching
-            low -- lower limit
-            hi -- higher limit
-            x -- search element
         
-        return:
-            time, selarch element result(index)
-        """
         length = len(self.arr)
         return interpolation_search(self.arr, 0, length-1, self.ele)
         

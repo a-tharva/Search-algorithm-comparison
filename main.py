@@ -9,9 +9,9 @@ import matplotlib.pyplot as plt
 import time
 
 
-def plot_graph(retime, fetime, bitime, jtime, search_element):
+def plot_graph(retime, fetime, bitime, jutime, search_element):
     
-    data = {'linear search':retime, 'interpolation search':fetime, 'binary search':bitime, 'jump search':jtime}
+    data = {'linear search':retime, 'interpolation search':fetime, 'binary search':bitime, 'jump search':jutime}
 
     names = list(data.keys())
     values = list(data.values())
@@ -30,19 +30,19 @@ def main():
     search_element = 9999920
     search1 = search.search(array, search_element)
 
-    retime, re = search1.linear()
-    fetime, fe = search1.interpolation()
-    bitime, bi = search1.binary()
-    jtime, ju = search1.jump()
+    linearTime, linear = search1.linear()
+    interpolationTime, interpolation = search1.interpolation()
+    binaryTime, binary = search1.binary()
+    jumpTime, jump = search1.jump()
 
     del search1
     
-    print('Search element {} time for execution in linear search {}'.format(re,retime))
-    print('Search element {} time for execution in interpolation search {}'.format(fe,fetime))
-    print('Search element {} time for execution in binary search {}'.format(bi,bitime))
-    print('Search element {} time for execution in jump search {}'.format(ju,jtime))
+    print('Search element {} time for execution in linear search {}'.format(linear,linearTime))
+    print('Search element {} time for execution in interpolation search {}'.format(interpolation,interpolationTime))
+    print('Search element {} time for execution in binary search {}'.format(binary,binaryTime))
+    print('Search element {} time for execution in jump search {}'.format(jump,jumpTime))
 
-    plot_graph(retime, fetime, bitime, jtime, search_element)
+    plot_graph(linearTime, interpolationTime, binaryTime, jumpTime, search_element)
     
     
     # Second array 
@@ -52,19 +52,19 @@ def main():
     search_element = 825
     search2 = search.search(array, search_element)
 
-    retime, re = search2.linear()
-    fetime, fe = search2.interpolation()
-    bitime, bi = search2.binary()
-    jtime, ju = search2.jump()
+    linearTime, linear = search2.linear()
+    interpolationTime, interpolation = search2.interpolation()
+    binaryTime, binary = search2.binary()
+    jumpTime, jump = search2.jump()
     
     del search2
     
-    print('\nSearch element {} time for execution in linear search {}'.format(re,retime))
-    print('Search element {} time for execution in interpolation search {}'.format(fe,fetime))
-    print('Search element {} time for execution in binary search {}'.format(bi,bitime))
-    print('Search element {} time for execution in jump search {}'.format(ju,jtime))
+    print('\nSearch element {} time for execution in linear search {}'.format(linear,linearTime))
+    print('Search element {} time for execution in interpolation search {}'.format(interpolation,interpolationTime))
+    print('Search element {} time for execution in binary search {}'.format(binary,binaryTime))
+    print('Search element {} time for execution in jump search {}'.format(jump,jumpTime))
 
-    plot_graph(retime, fetime, bitime, jtime, search_element)
+    plot_graph(linearTime, interpolationTime, binaryTime, jumpTime, search_element)
     
     
     plt.legend(loc='upper right')

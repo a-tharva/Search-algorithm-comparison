@@ -6,7 +6,6 @@ Main function for search algorithms graph plotting
 
 import search
 import matplotlib.pyplot as plt
-import time
 
 
 def plot_graph(retime, fetime, bitime, jutime, search_element):

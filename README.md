@@ -1,4 +1,4 @@
-# Search-algorithm-comparison
+# algorithm-comparison
   Comparison between different search algorithms
   
 ![Figure_1](https://user-images.githubusercontent.com/70326109/137263676-9e410736-0b97-4fd3-985c-cc978e6b5a01.png)

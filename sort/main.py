@@ -16,8 +16,9 @@ print('-array created')
 random.shuffle(array)
 print('-array shuffled')
 
-# function for plotting scatter graph
+
 def plot_graph(lst):    
+    # function for plotting scatter graph
     data = {'bubble sort':lst[0], 'insertion sort':lst[1], 'merge sort':lst[2], 'quick sort':lst[3]}
 
     names = list(data.keys())
@@ -28,8 +29,9 @@ def plot_graph(lst):
     plt.ylabel('Time in milliseconds')
     plt.show()
     
-# function for sorting
+
 def sort_time():
+    # function for sorting
     s = sort.sort(array)
     
     # Sorting
@@ -47,8 +49,9 @@ def sort_time():
     
     return bubble_time, insertion_time, merge_time, quick_time
 
-# Main function
+
 def main():
+    # Main function
     lst = sort_time()
     plot_graph(lst)
     

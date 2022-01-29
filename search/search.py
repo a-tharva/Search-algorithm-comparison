@@ -15,7 +15,9 @@ functions:
 import math
 import time
 
+
 def timer(func):
+    # Decorator for time
     def wrapper(*args, **kwargs):
         before = time.time()
         search = func(*args,**kwargs)
@@ -39,7 +41,6 @@ def linear_search(arr, search_element):
     search_at = 0
     search_result = False
     
-    #
     while search_at < len(arr) and search_result is False:
         if arr[search_at] == search_element:
             search_result = True
@@ -69,13 +70,10 @@ def jump_search(arr, n, x):
         step += math.sqrt(n)
         if prev >= n:
             return False
-    
     while arr[int(prev)] < x:
         prev += 1
-        
         if prev == min(step, n):
             return False
-        
     if arr[int(prev)] == x:
         return int(prev)
     
@@ -101,15 +99,10 @@ def binary_search(arr, l, r, x):
         
         if arr[mid] == x:
             return mid
-        
-        
         elif arr [mid] > x:
             return binary_search(arr, l, mid-1, x)
-        
-        
         else:
             return binary_search(arr, mid+1, r, x)
-        
     else:
         #element not present in array
         return False
@@ -133,10 +126,8 @@ def interpolation_search(arr, low, hi, x):
         
         if arr[pos] == x:
             return pos;
-        
         if arr[pos] < x:
             return interpolation_search(arr, pos + 1, hi, x)
-        
         if arr[pos] > x:
             return interpolation_search(arr, low, pos-1, x)
     
@@ -161,27 +152,25 @@ class search:
         self.arr = arr
         self.ele = ele
         
+        
     @timer
     def linear(self):
-        
         return linear_search(self.arr, self.ele)
+        
         
     @timer
     def jump(self):
-        
         length = len(self.arr)
         return jump_search(self.arr, length, self.ele)
         
+        
     @timer
     def binary(self):
-        
         length = len(self.arr)
         return binary_search(self.arr, 0, length-1, self.ele)
         
         
     @timer
     def interpolation(self):
-        
         length = len(self.arr)
         return interpolation_search(self.arr, 0, length-1, self.ele)
-        

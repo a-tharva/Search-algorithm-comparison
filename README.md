@@ -1,7 +1,7 @@
 # algorithm-comparison
   Comparison between different search algorithms
   
-![Figure_1](https://user-images.githubusercontent.com/70326109/137263676-9e410736-0b97-4fd3-985c-cc978e6b5a01.png)
+![Figure_1](https://user-images.githubusercontent.com/70326109/153465046-92d70340-ef1e-427c-8c8e-a7cbb3129c8c.PNG)
   
 ## Introduction
 Python script to compare time required for different search algorithms to search an element in sorted array of size 10000000

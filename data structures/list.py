@@ -6,10 +6,9 @@ class:
 
 functions:
 
-    linear_search(array, search_element)
-    jump_search(array, array_length, search_element)
-    binary_search(array, left, right, search_element)
-    interpolation_search(array, lower_limit, higher_limit, search_element)
+    append(item)
+    len()
+    get(index)
 """
 
 import ctypes

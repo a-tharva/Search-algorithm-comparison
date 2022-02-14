@@ -1,0 +1,9 @@
+array/list
+linked list
+stack
+queue
+binary tree
+binary search tree
+heap
+hash table
+matrix

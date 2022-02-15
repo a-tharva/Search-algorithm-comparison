@@ -13,6 +13,8 @@ functions:
 
 
 class _stack:
+    
+    
     def __init__(self):
         self.stack = []
         self.length = 0
@@ -20,7 +22,7 @@ class _stack:
     
     def add(self, value):
         if value not in self.stack:
-            self.stack.append(data)
+            self.stack.append(value)
             self.length += 1
             return True
         else:
@@ -36,3 +38,7 @@ class _stack:
             return('No element in stack')
         else:
             return self.stack.pop()
+        
+    
+    def __len__(self):
+        return self.length

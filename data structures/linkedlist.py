@@ -22,6 +22,8 @@ class Node:
         
         
 class _LinkedList:
+    
+    
     def __init__(self):
         self.head = None
         
@@ -65,7 +67,7 @@ class _LinkedList:
     def insert_at(self, index, data):
         if index<0 or index>self.get_length():
             raise Exception('Invalid Index')
-        id index==0:
+        if index==0:
             self.insert_at_begining(data)
             return
         count = 0

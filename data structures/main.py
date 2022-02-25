@@ -8,6 +8,7 @@ from list import _list
 from stack import _stack
 from linkedlist import _LinkedList
 from hashtable import _HashTable
+from queue import _queue
 
 
 def ListFun():
@@ -44,12 +45,23 @@ def HashFun():
     print(hs['fun'])
     
     
+def QueueFun():
+    
+    qu = _queue()
+    print('queue')
+    qu.enqueue(20)
+    qu.enqueue(30)
+    qu.enqueue(10)
+    print(qu.size())
+    print(qu.dequeue())
+    
 def main():
     
     ListFun()
 #    LLFun()
     StackFun()
     HashFun()
+    QueueFun()
 
 if __name__ == '__main__':
     main()

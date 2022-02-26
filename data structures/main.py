@@ -25,11 +25,7 @@ def HashFun():
         hs[f'{_}'] = _
     insert_time = time.time() - insert_time
     print(f'time for insertion - {insert_time}')
-    print(hs['52'])
-    print(hs['5'])
-    print(hs['10'])
-    print(hs['22'])
-#    print(hs.arr)
+    del(hs)
     return insert_time
     
     
@@ -43,8 +39,7 @@ def ListFun():
         ls.append(_)
     insert_time = time.time() - insert_time
     print(f'time for insertion - {insert_time}')
-    print(len(ls))
-    print(ls[1])
+    del(ls)
     return insert_time
 
     
@@ -58,6 +53,7 @@ def LLFun():
         ll.insert_at_end(_)
     insert_time = time.time() - insert_time
     print(f'time for insertion - {insert_time}')
+    del(ll)
     return insert_time
     
     
@@ -71,8 +67,7 @@ def QueueFun():
         qu.enqueue(_)
     insert_time = time.time() - insert_time
     print(f'time for insertion - {insert_time}')
-    print(qu.size())
-    print(qu.dequeue())
+    del(qu)
     return insert_time
     
     
@@ -86,8 +81,7 @@ def StackFun():
         st.add(_)
     insert_time = time.time() - insert_time
     print(f'time for insertion - {insert_time}')
-    print(len(st))
-    print(st.peek())
+    del(st)
     return insert_time
     
     
@@ -113,14 +107,14 @@ def run():
     ll_insert_time = LLFun()
     queue_insert_time = QueueFun()
     stack_insert_time = StackFun()
-#    TreeFun()
+#    tree_insert_time = TreeFun()
     return hash_insert_time, list_insert_time, ll_insert_time, queue_insert_time, stack_insert_time
 
 
 def main():
     print('Comparison started')
     ls = run()
-    plot_graph(ls, 'inserting value')
+    plot_graph(ls, f'inserting {RANGE} values')
     
 
 if __name__ == '__main__':

@@ -18,8 +18,9 @@ from hashtable import _HashTable
 RANGE = 50000
 search_element = randint(2000, RANGE)
 
-def HashFun():
-    
+
+def HashFunction():
+
     hs = _HashTable()
     print('\n- hash initialized')
     # Insertion
@@ -37,10 +38,10 @@ def HashFun():
     print(f'time for search : {search_time}')
     del(hs)
     return insert_time, search_time
-    
-    
-def ListFun():
-    
+
+
+def ListFunction():
+
     ls = _list()
     print('\n- list initialized')
     # Insertion
@@ -61,9 +62,9 @@ def ListFun():
     del(ls)
     return insert_time, search_time
 
-    
-def LLFun():
-    
+
+def LLFunction():
+
     ll = _LinkedList()
     print('\n- linkedlist initialized')
     # Insertion
@@ -82,10 +83,10 @@ def LLFun():
     search_time = 0
     del(ll)
     return insert_time, search_time
-    
-    
-def QueueFun():
-    
+
+
+def QueueFunction():
+
     qu = _queue()
     print('\n- queue initialized')
     # Insertion
@@ -105,10 +106,10 @@ def QueueFun():
     print(f'time for search : {search_time}')
     del(qu)
     return insert_time, search_time
-    
-    
-def StackFun():
-    
+
+
+def StackFunction():
+
     st = _stack()
     print('\n- stack initialized')
     # Insertion
@@ -128,35 +129,36 @@ def StackFun():
     print(f'time for search : {search_time}')
     del(st)
     return insert_time, search_time
-    
-    
+
+
 def TreeFun():
     pass
-    
-    
+
+
 def plot_graph(ls, lb):
-    
-    data = {'hash':ls[0], 'list':ls[1], 'linked list':ls[2], 'queue':ls[3], 'stack':ls[4]}
+
+    data = {'hash': ls[0], 'list': ls[1],
+            'linked list': ls[2], 'queue': ls[3], 'stack': ls[4]}
     names = list(data.keys())
     values = list(data.values())
-    
+
     plt.scatter(names, values, label=lb)
     plt.suptitle(f'Comparison with {RANGE} elements')
     plt.ylabel('Time')
-    
-    
-def run():
-    hash_insert_time, hash_search_time = HashFun()
-    list_insert_time, list_search_time = ListFun()
-    ll_insert_time, ll_search_time = LLFun()
-    queue_insert_time, queue_search_time = QueueFun()
-    stack_insert_time, stack_search_time = StackFun()
-#    tree_insert_time = TreeFun()
 
-    insert_time_ls = [hash_insert_time, list_insert_time, 
-                 ll_insert_time, queue_insert_time, stack_insert_time]
+
+def run():
+    hash_insert_time, hash_search_time = HashFunction()
+    list_insert_time, list_search_time = ListFunction()
+    ll_insert_time, ll_search_time = LLFunction()
+    queue_insert_time, queue_search_time = QueueFunction()
+    stack_insert_time, stack_search_time = StackFunction()
+    # tree_insert_time = TreeFun()
+
+    insert_time_ls = [hash_insert_time, list_insert_time,
+                      ll_insert_time, queue_insert_time, stack_insert_time]
     search_time_ls = [hash_search_time, list_search_time,
-                 ll_search_time, queue_search_time, stack_search_time]
+                      ll_search_time, queue_search_time, stack_search_time]
     return insert_time_ls, search_time_ls
 
 
@@ -167,6 +169,7 @@ def main():
     plot_graph(search_ls, f'search {search_element}')
     plt.legend(loc='upper right')
     plt.show()
+
 
 if __name__ == '__main__':
     main()

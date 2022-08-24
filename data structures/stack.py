@@ -13,13 +13,11 @@ functions:
 
 
 class _stack:
-    
-    
+
     def __init__(self):
         self.stack = []
         self.length = 0
-    
-    
+
     def add(self, value):
         if value not in self.stack:
             self.stack.append(value)
@@ -27,18 +25,15 @@ class _stack:
             return True
         else:
             return False
-    
-    
+
     def peek(self):
         return self.stack[-1]
-    
-    
+
     def remove(self):
         if self.length <= 0:
             return('No element in stack')
         else:
             return self.stack.pop()
-        
-    
+
     def __len__(self):
         return self.length
